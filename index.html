@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel da Silva Santos | Software Engineer, Cybersecurity</title>
+<meta name="description" content="Portfólio de Daniel da Silva Santos: software, ferramentas de segurança e automação em Python e JavaScript, com IA no fluxo de engenharia.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B1016">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/work.css">
+<link rel="stylesheet" href="css/ai.css">
+<script>
+  document.documentElement.classList.add('js');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
+</script>
+<script src="js/spring.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/work.js" defer></script>
+<script src="js/ai.js" defer></script>
+<script src="js/wired.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">shwdaniel<span>.</span></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a class="link" href="#work">projetos</a></li>
+        <li><a class="link" href="#ai">IA</a></li>
+        <li><a class="link hide-sm" href="#stack">stack</a></li>
+        <li><a class="link" href="#contact">contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wire" aria-hidden="true"><i class="wire-fill"></i></div>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <p class="status" data-reveal>São Paulo, aberto a estágio</p>
+    <h1 class="name" aria-label="Daniel da Silva Santos"><span class="line" data-split>Daniel</span><span class="line" data-split>Santos</span></h1>
+    <div class="hero-foot">
+      <p class="lead" data-reveal data-d="3">Desenvolvedor em formação e estagiário de suporte de TI. Construo software, ferramentas de segurança e automação. Uso IA no processo e confiro cada sugestão com testes.</p>
+      <div class="hero-side" data-reveal data-d="4">
+        <ul class="facts"><li>Software Engineering</li><li>Cybersecurity</li><li>IA no fluxo de engenharia</li></ul>
+        <div class="actions">
+          <a class="btn primary" href="#work">Ver projetos</a>
+          <a class="btn" href="https://github.com/shwdaniel7">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/daniel-silva-santos-b85012305/">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="metrics" aria-label="Números">
+  <div class="wrap">
+    <ul>
+      <li data-reveal data-d="0"><b data-count="6">6</b><span>projetos, do protótipo ao sistema com testes</span></li>
+      <li data-reveal data-d="1"><b data-count="37">37</b><span>testes automatizados no KEEPER</span></li>
+      <li data-reveal data-d="2"><b data-count="13" data-suffix="x">13x</b><span>mais rápido o matching de strings do CERBERUS</span></li>
+      <li data-reveal data-d="3"><b data-count="200">200</b><span>notebooks e tablets no estágio (número aproximado)</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="work" class="work">
+  <div class="wrap sec-head">
+    <h2 class="sec-title" data-split data-node>projetos</h2>
+    <p class="sec-lead" data-reveal>Seis projetos, do que já funciona ao que ainda é protótipo. Abra um para ver o problema, o que fiz, como verifiquei e onde termina.</p>
+  </div>
+
+  <div class="gallery">
+    <div class="pin">
+      <div class="rail">
+      <article class="pcard" data-name="KEEPER">
+        <div class="shot"><div class="screen"><img src="assets/projects/keeper.webp" width="1280" height="800" alt="Painel do KEEPER com contagem de equipamentos disponíveis, emprestados e em manutenção, empréstimos atrasados e chamados abertos." loading="lazy"></div></div>
+        <div class="info">
+          <h3>KEEPER</h3>
+          <p class="pitch">Substitui planilhas no controle de equipamentos de TI: inventário, empréstimos, manutenção, QR Code e backup, em um sistema web sem dependências npm.</p>
+          <p class="metric"><b>37</b><span>testes automatizados, incluindo servidor HTTP real</span></p>
+          <ul class="chips"><li>Node.js</li><li>SQLite</li><li>JavaScript puro</li><li>sem npm</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de KEEPER</span></button>
+        </div>
+        <template>
+          <div class="shots two">
+            <figure><img src="assets/projects/keeper.webp" width="1280" height="800" alt="Painel do KEEPER." loading="lazy"><figcaption>painel, com dados fictícios de demonstração</figcaption></figure>
+            <figure><img src="assets/projects/keeper-inventario.webp" width="1280" height="729" alt="Inventário do KEEPER com busca, filtros e estados." loading="lazy"><figcaption>inventário com busca e filtros</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Planilhas não dizem quem está com qual notebook, o que está atrasado nem qual o histórico de cada equipamento.</dd></div>
+            <div><dt>o que fiz</dt><dd>Servidor com <code>node:http</code>, API JSON, SQLite e uma SPA em JavaScript puro, sem dependências npm. As regras de estado ficam no domínio, não só na interface. Inclui login, sessões, backup e restauração, QR Code próprio e relatórios.</dd></div>
+            <div><dt>como verifiquei</dt><dd>37 testes com <code>node --test</code>, incluindo servidor HTTP real, autenticação, CSRF e backup.</dd></div>
+            <div><dt>limites</dt><dd>Um único administrador, sem 2FA nem backup remoto. Está documentado no repositório.</dd></div>
+          </dl>
+          <pre class="term" tabindex="0" aria-label="Regras de transição de estado do KEEPER"><span class="d">regras de estado do equipamento</span>
+
+disponível  <span class="p">→</span> emprestado   <span class="d">lote: tudo ou nada</span>
+emprestado  <span class="p">→</span> disponível   <span class="d">devolução encerra o empréstimo</span>
+disponível  <span class="p">→</span> manutenção   <span class="d">abrir chamado</span>
+manutenção  <span class="p">→</span> disponível   <span class="d">resolver o último chamado</span>
+disponível  <span class="p">→</span> baixado      <span class="d">encerra chamados abertos</span>
+emprestado  <span class="p">→</span> manutenção   <span class="d">recusado: devolver antes</span></pre>
+          <p class="links"><a href="https://github.com/shwdaniel7/keeper">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="CERBERUS">
+        <div class="shot"><div class="screen"><img src="assets/projects/cerberus.webp" width="1040" height="740" alt="Relatório HTML do CERBERUS: risco moderado 30 de 100, metadados do arquivo e seções de alertas e strings." loading="lazy"></div></div>
+        <div class="info">
+          <h3>CERBERUS</h3>
+          <p class="pitch">Triagem estática de arquivos suspeitos, com score de risco que mostra seus fatores, em GUI e CLI.</p>
+          <p class="metric"><b>13x</b><span>mais rápido o matching de strings, em benchmark</span></p>
+          <ul class="chips"><li>Python</li><li>Tkinter</li><li>SQLite WAL</li><li>multiprocessing</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de CERBERUS</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/cerberus.webp" width="1040" height="740" alt="Relatório HTML gerado pelo CERBERUS." loading="lazy"><figcaption>relatório HTML gerado ao analisar o cmd.exe do Windows (arquivo legítimo, risco moderado por strings como cmd.exe)</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Triar um arquivo suspeito exige várias ferramentas e passos manuais: hash, reputação, tipo real, strings, empacotamento.</dd></div>
+            <div><dt>o que fiz</dt><dd>Um pipeline local que reúne hash SHA-256, magic numbers, entropia, strings e IOCs em um score de 0 a 100 que mostra os fatores. A mesma base serve a GUI e a CLI. O lote roda em processos separados, com cache SQLite em modo WAL.</dd></div>
+            <div><dt>como verifiquei</dt><dd>Benchmark: o matching de strings caiu de 0,4022 s para 0,0301 s em um arquivo de 20 MB (cerca de 13x), com a mesma contagem de alertas.</dd></div>
+            <div><dt>segurança</dt><dd>O arquivo nunca é executado. Limite de 200 MB, escaping de HTML, proteção contra CSV injection e chave de API só em <code>.env</code>.</dd></div>
+            <div><dt>limites</dt><dd>É triagem estática: não substitui sandbox nem antivírus. YARA e MITRE ATT&amp;CK estão no roadmap.</dd></div>
+          </dl>
+          <pre class="term" tabindex="0" aria-label="Exemplos de uso da CLI do CERBERUS"><span class="p">$</span> python analyzer.py arquivo.exe --full
+<span class="p">$</span> python analyzer.py arquivo.exe --quick --no-virustotal --quiet
+<span class="p">$</span> python analyzer.py pasta_de_amostras --full --workers 2
+
+<span class="d">GUI: IDENTITY → EVIDENCE → VERDICT · saída: JSON, CSV e HTML</span></pre>
+          <p class="links"><a href="https://github.com/shwdaniel7/CERBERUS">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="CERBERUS Explain">
+        <div class="shot"><div class="screen"><img src="assets/projects/explain.webp" width="1280" height="800" alt="Terminal com a saída do CERBERUS Explain para o cmd.exe do Windows: risco Moderate, resumo, fatos, hipóteses e próximos passos." loading="lazy"></div></div>
+        <div class="info">
+          <h3>CERBERUS Explain</h3>
+          <p class="pitch">Resume a triagem de um relatório do CERBERUS com um LLM local, valida a resposta contra o relatório e mede quando o modelo erra.</p>
+          <p class="metric"><b>7</b><span>checagens que a resposta precisa passar antes de aparecer</span></p>
+          <ul class="chips"><li>Python</li><li>Ollama</li><li>JSON Schema</li><li>sem API key</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de CERBERUS Explain</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/explain.webp" width="1280" height="800" alt="Saída do CERBERUS Explain para o cmd.exe." loading="lazy"><figcaption>saída real para o cmd.exe do Windows, com o modelo qwen2.5:7b-instruct. O modelo chama de suspeitos domínios que são nomes de DLLs: um exagero que a validação não pega.</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Modelo pequeno erra e inventa. Além disso, um relatório de malware pode conter texto escrito para enganar o modelo.</dd></div>
+            <div><dt>o que fiz</dt><dd>Uma CLI que manda um resumo do relatório do CERBERUS para um modelo rodando no Ollama, na minha máquina, sem chave de API nem custo. O relatório entra no prompt como dado delimitado, a resposta sai em JSON Schema, e a validação confere o risco, os IOCs citados, o score e as afirmações de ausência. Se reprovar, o modelo tem uma segunda tentativa, com o motivo.</dd></div>
+            <div><dt>como verifiquei</dt><dd>19 testes com o modelo simulado e 4 rodadas de avaliação em 8 relatórios reais. Na primeira rodada tudo passou, mas ao ler as respostas achei afirmações falsas, como dizer que o <code>calc.exe</code> não tem URLs, IPs nem domínios. Isso virou duas checagens novas, a taxa caiu para 3/8 e voltou para 8/8 depois de ajustes no prompt.</dd></div>
+            <div><dt>limites</dt><dd>São 8 amostras e eu ajustei o prompt olhando para elas, então o 8/8 não vale para relatórios novos. Não há relatórios High ou Critical. O resumo pode exagerar na interpretação e não substitui análise humana.</dd></div>
+          </dl>
+          <p class="links"><a href="https://github.com/shwdaniel7/cerberus-explain">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="FLCL File Organizer">
+        <div class="shot"><div class="screen"><img src="assets/projects/flcl.webp" width="1280" height="820" alt="Tela Organize do FLCL File Organizer com o plano de movimentação de arquivos antes de executar." loading="lazy"></div></div>
+        <div class="info">
+          <h3>FLCL File Organizer</h3>
+          <p class="pitch">Organiza e monitora pastas no Windows, mas só depois de mostrar o plano e com desfazer.</p>
+          <p class="metric"><b>5</b><span>páginas de interface, com undo da última execução</span></p>
+          <ul class="chips"><li>Python</li><li>CustomTkinter</li><li>Watchdog</li><li>CI no Windows</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de FLCL File Organizer</span></button>
+        </div>
+        <template>
+          <div class="shots two">
+            <figure><img src="assets/projects/flcl.webp" width="1280" height="820" alt="Tela Organize do FLCL." loading="lazy"><figcaption>Organize: o plano completo antes de mover qualquer arquivo</figcaption></figure>
+            <figure><img src="assets/projects/flcl-reports.webp" width="1280" height="820" alt="Tela Reports do FLCL." loading="lazy"><figcaption>Reports: categorias, espaço e histórico</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Automações simples movem arquivos sem mostrar nada, sobrescrevem destinos e pegam arquivos que ainda estão sendo baixados.</dd></div>
+            <div><dt>o que fiz</dt><dd>Um fluxo em que o plano é mostrado antes de qualquer mudança. Conflitos ganham um sufixo em vez de sobrescrever, o programa espera o tamanho do arquivo estabilizar, e a última execução pode ser desfeita. O monitoramento roda em workers e fala com a interface por <code>queue</code>.</dd></div>
+            <div><dt>como verifiquei</dt><dd>Testes com <code>unittest</code>, lint com Ruff e CI no GitHub Actions em Windows.</dd></div>
+            <div><dt>limites</dt><dd>Por enquanto só Windows.</dd></div>
+          </dl>
+          <pre class="term" tabindex="0" aria-label="Exemplo de plano de organização do FLCL"><span class="d">preview → seleção → mover → histórico → undo</span>
+
+relatorio.pdf  <span class="p">→</span> Documents/relatorio (1).pdf  <span class="d"># exemplo: destino ocupado</span>
+backup.tar.gz  <span class="p">→</span> Archives/                    <span class="d"># exemplo: .tar.gz vence .gz</span></pre>
+          <p class="links"><a href="https://github.com/shwdaniel7/FLCL-File-Organizer">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="DS-001 · loader Java ofuscado">
+        <div class="shot"><div class="screen"><img src="assets/projects/ds001.svg" width="1280" height="800" alt="Diagrama da cadeia do loader: JAR, ConfigProvider com AES/CBC, payload p.bin, javaw.exe e PowerShell oculto. O Stage 2 nunca foi executado." loading="lazy"></div></div>
+        <div class="info">
+          <h3>DS-001</h3>
+          <p class="pitch">Análise estática de um loader Java ofuscado entregue como "mod" de Minecraft por Discord.</p>
+          <p class="metric"><b class="z">0</b><span>execuções da amostra; fatos separados de hipóteses</span></p>
+          <ul class="chips"><li>Java</li><li>AES/CBC</li><li>MITRE ATT&amp;CK</li><li>YARA</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de DS-001</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/ds001.svg" width="1280" height="800" alt="Diagrama da cadeia do loader." loading="lazy"><figcaption>diagrama feito por mim a partir da análise</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Um "mod" de Minecraft foi enviado por Discord depois de dias de conversa. Não era um mod.</dd></div>
+            <div><dt>o que fiz</dt><dd>Analisei o JAR sem executá-lo: descriptografia AES/CBC em memória, chamadas por reflexão, payload gravado como <code>.mc-cache\javaw.exe</code> e iniciado por PowerShell oculto. Extraí IOCs, mapeei MITRE ATT&amp;CK, escrevi uma regra YARA de exemplo e publiquei o writeup em português e inglês.</dd></div>
+            <div><dt>como verifiquei</dt><dd>Cada afirmação aponta para uma evidência, e o que não foi provado está marcado como hipótese.</dd></div>
+            <div><dt>limites</dt><dd>O Stage 2 nunca foi executado nem analisado. Não afirmo nada sobre o comportamento dele como fato.</dd></div>
+          </dl>
+          <pre class="term" tabindex="0" aria-label="Fatos confirmados e hipóteses do DS-001"><span class="ok">confirmado</span>    loader grava .mc-cache\javaw.exe e tenta executar com RunAs
+<span class="ok">confirmado</span>    payload p.bin (~5,99 MB) cifrado com AES/CBC
+<span class="p">não provado</span>   comportamento do Stage 2
+<span class="p">não provado</span>   163.5.102.220 ser servidor de comando e controle</pre>
+          <p class="links"><a href="https://github.com/shwdaniel7/minecraft-mod-java-loader-analysis">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="PreventCar">
+        <div class="shot"><div class="screen"><img src="assets/projects/preventcar.webp" width="1280" height="800" alt="Landing page do protótipo PreventCar com o título Sua frota sob controle, sem estresse." loading="lazy"></div></div>
+        <div class="info">
+          <h3>PreventCar</h3>
+          <p class="pitch">Protótipo acadêmico de manutenção preventiva de veículos, desenvolvido em equipe.</p>
+          <p class="metric"><b>18</b><span>entidades no modelo de dados e 13 casos de uso</span></p>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>equipe de 4</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de PreventCar</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/preventcar.webp" width="1280" height="800" alt="Landing page do PreventCar." loading="lazy"><figcaption>landing page do protótipo</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Motoristas e frotas controlam manutenção em planilhas e na memória, e esquecem revisões.</dd></div>
+            <div><dt>meu papel</dt><dd>Desenvolvedor do projeto. Construí telas e interações do protótipo e contribuí com requisitos, casos de uso e o modelo de dados.</dd></div>
+            <div><dt>entregas</dt><dd>13 casos de uso, modelo com 18 entidades e um protótipo navegável com dashboard, veículos, manutenções e agendamentos.</dd></div>
+            <div><dt>limites</dt><dd>É um protótipo: não tem backend, banco nem machine learning. Os alertas do MVP seriam por tempo e quilometragem, com regra fixa.</dd></div>
+          </dl>
+          <p class="links"><a href="https://github.com/PreventCar/PreventCar">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      </div>
+      <div class="gprog" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<section id="ai" class="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title" data-split data-node>IA</h2>
+      <p class="sec-lead" data-reveal>Casos reais de uso de IA em cada projeto.</p>
+    </div>
+
+    <ul class="tools" aria-label="Ferramentas" data-reveal>
+      <li>Claude Code</li><li>Cursor</li><li>Copilot Agent</li><li>OpenCode</li><li>MCPs</li>
+    </ul>
+
+    <div class="replay" id="replay" data-reveal>
+      <div class="cases" role="tablist" aria-label="Casos de uso de IA"></div>
+
+      <div class="panel" data-case="cerberus" data-title="CERBERUS" data-sub="cache e concorrência" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>O lote passou a rodar em processos separados, com cache SQLite compartilhado pelos workers.</p></li>
+          <li data-who="ia"><b>IA</b><p>Rastreou o fluxo entre GUI, CLI e workers atrás de efeitos colaterais: cache obsoleto quando as listas de IOC mudam, acesso concorrente ao banco.</p></li>
+          <li data-who="eu"><b>eu</b><p>A chave do cache passou a incluir o conteúdo das listas de IOC, e o SQLite foi para o modo WAL.</p></li>
+          <li data-who="teste"><b>teste</b><p>Regressões e entradas hostis checadas por execução local e benchmark, antes de aceitar a mudança.</p></li>
+        </ol>
+        <p class="verdict"><b>0,4022 s → 0,0301 s</b><span>matching de strings em 20 MB, mesma contagem de alertas</span></p>
+      </div>
+
+      <div class="panel" data-case="keeper" data-title="KEEPER" data-sub="casos de borda viram teste" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>Escopo fechado: um administrador, três tipos de equipamento, sem portal para o usuário final.</p></li>
+          <li data-who="ia"><b>IA</b><p>Questionou o que um CRUD costuma esquecer: empréstimo em lote, restaurar backup sem perder o estado, troca de senha com sessões ativas, XSS, CSV injection.</p></li>
+          <li data-who="eu"><b>eu</b><p>Cada pergunta virou regra de negócio, validação ou teste. Recomendação solta não entrou.</p></li>
+          <li data-who="teste"><b>teste</b><p>Funções isoladas e servidor HTTP real: autenticação, CSRF, host inválido, backup.</p></li>
+        </ol>
+        <p class="verdict"><b>37 testes</b><span>automatizados com node --test</span></p>
+      </div>
+
+      <div class="panel" data-case="flcl" data-title="FLCL" data-sub="arquivo ainda em download" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>Uma automação que move arquivos no meio de uma cópia ou download estraga o resultado.</p></li>
+          <li data-who="ia"><b>IA</b><p>Apontou condições de corrida durante cópias, downloads e o encerramento do monitoramento, e casos de borda de nomes no Windows.</p></li>
+          <li data-who="eu"><b>eu</b><p>O programa espera o tamanho do arquivo estabilizar. Entre volumes, copia para um temporário, substitui de forma atômica e só então remove a origem.</p></li>
+          <li data-who="teste"><b>teste</b><p>Estabilidade, conflitos, undo e monitoramento cobertos por testes, mais lint e CI.</p></li>
+        </ol>
+        <p class="verdict"><b>unittest + Ruff + CI</b><span>no GitHub Actions, em Windows</span></p>
+      </div>
+
+      <div class="panel" data-case="ds001" data-title="DS-001" data-sub="fato ou hipótese" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>A amostra nunca foi executada, então nada sobre o Stage 2 podia virar fato.</p></li>
+          <li data-who="ia"><b>IA</b><p>Ajudou a organizar o dossiê e a achar afirmações que precisavam de linguagem probabilística.</p></li>
+          <li data-who="eu"><b>eu</b><p>Conferi cada conclusão com o JAR, os hashes e as capturas, e marquei o resto como não provado. A engenharia reversa foi minha.</p></li>
+        </ol>
+        <p class="verdict"><b>zero execuções</b><span>fatos confirmados separados de hipóteses</span></p>
+      </div>
+
+      <div class="panel" data-case="explain" data-title="Explain" data-sub="medir o próprio modelo" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>A primeira avaliação do CERBERUS Explain aprovou as 8 amostras. Em vez de confiar nisso, li as respostas.</p></li>
+          <li data-who="teste"><b>teste</b><p>O modelo dizia que o calc.exe não tinha URLs, IPs nem domínios. O relatório lista 1 URL, 2 IPs e 11 domínios.</p></li>
+          <li data-who="eu"><b>eu</b><p>Criei duas checagens: afirmação de ausência contra o relatório, e VirusTotal não consultado usado como evidência.</p></li>
+          <li data-who="teste"><b>teste</b><p>Com as checagens novas, só 3 de 8 amostras passaram de primeira.</p></li>
+          <li data-who="eu"><b>eu</b><p>Ajustei o prompt com duas regras sobre contagem de IOCs e VirusTotal, e avaliei de novo.</p></li>
+        </ol>
+        <p class="verdict"><b>8/8 → 3/8 → 8/8</b><span>aprovadas de primeira, nas 8 amostras em que ajustei o prompt</span></p>
+      </div>
+
+      <p class="note">Resumo do processo documentado em cada projeto, sem log de prompts.</p>
+    </div>
+
+    <div class="two-col" data-reveal>
+      <div>
+        <h3>onde estou</h3>
+        <ul>
+          <li>Prompt engineering prático: contexto, decomposição, refinamento e validação.</li>
+          <li>Integrei um LLM local no CERBERUS Explain e avalio as respostas com checagens automáticas.</li>
+          <li>Agentes e orquestração são a próxima área de estudo.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>o que ainda não faço</h3>
+        <ul>
+          <li>Não orquestro agentes em produção.</li>
+          <li>Não treino modelos.</li>
+          <li>Não afirmo que a IA fez o que os testes e a revisão fizeram.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-title" data-split data-node>stack</h2>
+      <p class="sec-lead" data-reveal>O que aparece nos projetos acima.</p>
+    </div>
+    <div class="srows">
+      <div class="srow" data-reveal data-d="0"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Java (básico)</li></ul></div>
+      <div class="srow" data-reveal data-d="1"><h3>dados e APIs</h3><ul><li>SQLite</li><li>APIs HTTP</li><li>JSON</li></ul></div>
+      <div class="srow" data-reveal data-d="2"><h3>engenharia</h3><ul><li>testes automatizados</li><li>CI (GitHub Actions)</li><li>Git</li></ul></div>
+      <div class="srow" data-reveal data-d="3"><h3>sistemas</h3><ul><li>Linux</li><li>Bash</li><li>Windows</li></ul></div>
+      <div class="srow" data-reveal data-d="4"><h3>IA</h3><ul><li>Ollama</li><li>LLM local</li><li>JSON Schema</li><li>validação de respostas</li></ul></div>
+      <div class="srow" data-reveal data-d="5"><h3>segurança</h3><ul><li>análise estática</li><li>OSINT</li><li>IOCs</li><li>YARA</li><li>MITRE ATT&amp;CK</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="sec-head">
+        <h2 class="sec-title" data-split data-node>contato</h2>
+        <p class="sec-lead" data-reveal>Estou em São Paulo e aberto a conversas sobre estágio e projetos.</p>
+      </div>
+      <a class="big-mail" href="mailto:swayerbr@gmail.com" data-reveal>swayerbr@gmail.com</a>
+      <ul class="contact-list" data-reveal>
+        <li><span>linkedin</span><a href="https://www.linkedin.com/in/daniel-silva-santos-b85012305/">daniel-silva-santos</a></li>
+        <li><span>github</span><a href="https://github.com/shwdaniel7">shwdaniel7</a></li>
+      </ul>
+    </div>
+    <figure class="gif-slot" aria-hidden="true" data-reveal data-d="2">
+      <canvas></canvas>
+      <img alt="" width="640" height="640" hidden>
+      <figcaption>no matter where you are, everyone is always connected</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Daniel da Silva Santos · São Paulo</div>
+</footer>
+
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <header>
+    <h2 id="detail-title"></h2>
+    <button class="close" type="button" aria-label="Fechar detalhes">✕</button>
+  </header>
+  <div class="content"></div>
+</dialog>
+
+</body>
+</html>

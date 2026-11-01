@@ -1,0 +1,78 @@
+/* Tokens compartilhados: site e currículo. Fonte da verdade: docs/design/DESIGN-SYSTEM.md */
+
+:root {
+  /* cor — "quarto da Lain": azul-ardósia, LEDs âmbar, brilho frio de CRT */
+  --ink:      #0B1016;   /* fundo */
+  --surface:  #121A24;   /* blocos, cards de terminal */
+  --raise:    #1A2432;   /* hover, camada acima da surface */
+  --line:     #33445A;   /* divisores e bordas (decorativo) */
+  --text:     #D6DEE8;
+  --muted:    #8C9AAE;
+  --led:      #F0B04A;   /* acento único: estado, prompt, foco */
+  --crt:      #A9CBFF;   /* links e dados; brilho frio */
+  --ok:       #7FD1A0;   /* testes passando */
+  --on-led:   #0B1016;
+
+  /* tipografia */
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* escala (ratio ~1.25) com tracking por tamanho */
+  --step--1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-0:  1rem;
+  --step-1:  1.25rem;
+  --step-2:  1.5625rem;
+  --step-3:  clamp(1.95rem, 1.6rem + 1.4vw, 2.44rem);
+  --step-4:  clamp(2.4rem, 1.7rem + 3vw, 3.8rem);
+  --track-body: 0;
+  --track-small: 0.01em;
+  --track-display: -0.03em;
+  --lead-body: 1.6;
+  --lead-display: 1.08;
+  --measure: 68ch;
+
+  /* espaço (base 4px) */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem;
+  --s-5: 1.5rem;  --s-6: 2rem;   --s-7: 3rem;    --s-8: 5rem;  --s-9: 8rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --page: 72rem;
+
+  /* raios: pequenos e funcionais, como janela de terminal */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 14px;
+
+  /* movimento: parâmetros de mola (Apple: damping + response) */
+  --spring-damping: 1;        /* padrão sem overshoot */
+  --spring-bounce-damping: 0.8; /* só após gesto com momentum */
+  --spring-response: 0.35;    /* segundos */
+  --t-fast: 120ms;            /* hover, press */
+  --t-base: 240ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* foco visível */
+  --focus: 2px solid var(--led);
+  --focus-offset: 3px;
+}
+
+/* currículo impresso/PDF: mesmos tokens, papel claro */
+@media print {
+  :root {
+    --ink: #FAF8F4;
+    --surface: #F1EEE8;
+    --raise: #E8E4DC;
+    --line: #C9C3B8;
+    --text: #14181F;
+    --muted: #5A6575;
+    --led: #9A5F0C;
+    --crt: #1F4E8C;
+    --ok: #1E7A4A;
+    --on-led: #FAF8F4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0ms; --t-base: 0ms; }
+}
+
+@media (prefers-contrast: more) {
+  :root { --line: #6B7F99; --muted: #B4C0D0; }
+}
