@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="t">
+<title id="t">Orquestração: um orquestrador (Opus) delega para cinco subagentes com pastas próprias, e o QA revisa cada rodada antes da integração.</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E151E"/><stop offset="1" stop-color="#0B1016"/></linearGradient>
+  <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#1C2836"/></pattern>
+  <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1l8 4-8 4z" fill="#F0B04A"/></marker>
+  <style>
+    text{font-family:"JetBrains Mono",Consolas,monospace}
+    .b{fill:#121A24;stroke:#33445A;stroke-width:1.5}
+    .o{fill:#121A24;stroke:#F0B04A;stroke-width:1.5}
+    .h{fill:#D6DEE8;font-size:22px;font-weight:700}
+    .s{fill:#8C9AAE;font-size:17px}
+    .a{fill:#F0B04A;font-size:18px}
+    .l{stroke:#F0B04A;stroke-width:2;fill:none;marker-end:url(#ar)}
+  </style>
+</defs>
+<rect width="1280" height="800" fill="url(#bg)"/><rect width="1280" height="800" fill="url(#dots)"/>
+
+<text x="64" y="84" class="a">&gt; 1 orquestrador, 5 subagentes, pastas sem sobreposição</text>
+
+<g transform="translate(440,130)"><rect class="o" width="400" height="120" rx="14"/><text x="24" y="48" class="h">Orquestrador · Opus</text><text x="24" y="80" class="s">planeja, delega, revisa, integra</text><text x="24" y="104" class="s">dono das interfaces compartilhadas</text></g>
+
+<path class="l" d="M640 250V300H160V340"/>
+<path class="l" d="M640 300H400V340"/>
+<path class="l" d="M640 250V340"/>
+<path class="l" d="M640 300H880V340"/>
+<path class="l" d="M640 300H1120V340"/>
+
+<g transform="translate(48,340)"><rect class="b" width="224" height="120" rx="14"/><text x="18" y="44" class="h">eng. reversa</text><text x="18" y="76" class="s">Sonnet</text><text x="18" y="100" class="s">docs/re/</text></g>
+<g transform="translate(288,340)"><rect class="b" width="224" height="120" rx="14"/><text x="18" y="44" class="h">recompilador</text><text x="18" y="76" class="s">Sonnet</text><text x="18" y="100" class="s">recomp/ cpu/</text></g>
+<g transform="translate(528,340)"><rect class="b" width="224" height="120" rx="14"/><text x="18" y="44" class="h">sistemas PSP</text><text x="18" y="76" class="s">Sonnet</text><text x="18" y="100" class="s">runtime/hle/</text></g>
+<g transform="translate(768,340)"><rect class="b" width="224" height="120" rx="14"/><text x="18" y="44" class="h">gráficos/áudio</text><text x="18" y="76" class="s">Sonnet</text><text x="18" y="100" class="s">gfx/ audio/ video/</text></g>
+<g transform="translate(1008,340)"><rect class="b" width="224" height="120" rx="14"/><text x="18" y="44" class="h">QA/segurança</text><text x="18" y="76" class="s">Haiku → Sonnet</text><text x="18" y="100" class="s">tests/ docs/qa/</text></g>
+
+<path d="M1120 460V520H640V560" stroke="#F0B04A" stroke-width="2" stroke-dasharray="3 7" fill="none" marker-end="url(#ar)"/>
+<text x="700" y="512" class="s">revisão de cada rodada</text>
+
+<g transform="translate(440,560)"><rect width="400" height="90" rx="14" fill="none" stroke="#F0B04A" stroke-width="1.5" stroke-dasharray="7 7"/><text x="24" y="40" class="h">integração</text><text x="24" y="70" class="s">só depois de build + testes + QA</text></g>
+
+<g font-size="17">
+  <text x="64" y="720" fill="#7FD1A0">~2,95 M tokens</text><text x="260" y="720" class="s">nas fases 1 a 6 (subagentes), contra estimativa de 26–73 M</text>
+</g>
+</svg>

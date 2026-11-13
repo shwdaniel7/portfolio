@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniel da Silva Santos | Software Engineer, Cybersecurity</title>
-<meta name="description" content="Portfólio de Daniel da Silva Santos: software, ferramentas de segurança e automação em Python e JavaScript, com IA no fluxo de engenharia.">
+<title>Daniel da Silva Santos | AI Engineering &amp; Cybersecurity</title>
+<meta name="description" content="Portfólio de Daniel da Silva Santos: software que integra LLMs com validação, ferramentas de segurança e automação em Python e JavaScript.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0B1016">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -52,13 +52,14 @@
     <p class="status" data-reveal>São Paulo, aberto a estágio</p>
     <h1 class="name" aria-label="Daniel da Silva Santos"><span class="line" data-split>Daniel</span><span class="line" data-split>Santos</span></h1>
     <div class="hero-foot">
-      <p class="lead" data-reveal data-d="3">Desenvolvedor em formação e estagiário de suporte de TI. Construo software, ferramentas de segurança e automação. Uso IA no processo e confiro cada sugestão com testes.</p>
+      <p class="lead" data-reveal data-d="3">Desenvolvedor em formação. Construo software que usa LLMs com validação, além de ferramentas de segurança e automação. Uso IA no processo e confiro cada sugestão com testes.</p>
       <div class="hero-side" data-reveal data-d="4">
-        <ul class="facts"><li>Software Engineering</li><li>Cybersecurity</li><li>IA no fluxo de engenharia</li></ul>
+        <ul class="facts"><li>AI Engineering</li><li>Software Engineering</li><li>Cybersecurity</li></ul>
         <div class="actions">
           <a class="btn primary" href="#work">Ver projetos</a>
           <a class="btn" href="https://github.com/shwdaniel7">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/daniel-silva-santos-b85012305/">LinkedIn</a>
+          <a class="btn" href="assets/Daniel-da-Silva-Santos-Curriculo.pdf" download>Currículo (PDF)</a>
         </div>
       </div>
     </div>
@@ -68,10 +69,10 @@
 <section class="metrics" aria-label="Números">
   <div class="wrap">
     <ul>
-      <li data-reveal data-d="0"><b data-count="6">6</b><span>projetos, do protótipo ao sistema com testes</span></li>
+      <li data-reveal data-d="0"><b data-count="7">7</b><span>projetos, do protótipo ao sistema com testes</span></li>
       <li data-reveal data-d="1"><b data-count="37">37</b><span>testes automatizados no KEEPER</span></li>
       <li data-reveal data-d="2"><b data-count="13" data-suffix="x">13x</b><span>mais rápido o matching de strings do CERBERUS</span></li>
-      <li data-reveal data-d="3"><b data-count="200">200</b><span>notebooks e tablets no estágio (número aproximado)</span></li>
+      <li data-reveal data-d="3"><b data-count="7">7</b><span>checagens de cada resposta do LLM no CERBERUS Explain</span></li>
     </ul>
   </div>
 </section>
@@ -79,12 +80,56 @@
 <section id="work" class="work">
   <div class="wrap sec-head">
     <h2 class="sec-title" data-split data-node>projetos</h2>
-    <p class="sec-lead" data-reveal>Seis projetos, do que já funciona ao que ainda é protótipo. Abra um para ver o problema, o que fiz, como verifiquei e onde termina.</p>
+    <p class="sec-lead" data-reveal>Sete projetos, do que já funciona ao que ainda é protótipo. Abra um para ver o problema, o que fiz, como verifiquei e onde termina.</p>
   </div>
 
   <div class="gallery">
     <div class="pin">
       <div class="rail">
+      <article class="pcard" data-name="CERBERUS Explain">
+        <div class="shot"><div class="screen"><img src="assets/projects/explain.webp" width="1280" height="800" alt="Terminal com a saída do CERBERUS Explain para o cmd.exe do Windows: risco Moderate, resumo, fatos, hipóteses e próximos passos." loading="lazy"></div></div>
+        <div class="info">
+          <h3>CERBERUS Explain</h3>
+          <p class="pitch">Resume a triagem de um relatório do CERBERUS com um LLM local, valida a resposta contra o relatório e mede quando o modelo erra.</p>
+          <p class="metric"><b>7</b><span>checagens que a resposta precisa passar antes de aparecer</span></p>
+          <ul class="chips"><li>Python</li><li>Ollama</li><li>JSON Schema</li><li>sem API key</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de CERBERUS Explain</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/explain.webp" width="1280" height="800" alt="Saída do CERBERUS Explain para o cmd.exe." loading="lazy"><figcaption>saída real para o cmd.exe do Windows, com o modelo qwen2.5:7b-instruct. O modelo chama de suspeitos domínios que são nomes de DLLs: um exagero que a validação não pega.</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Modelo pequeno erra e inventa. Além disso, um relatório de malware pode conter texto escrito para enganar o modelo.</dd></div>
+            <div><dt>o que fiz</dt><dd>Uma CLI que manda um resumo do relatório do CERBERUS para um modelo rodando no Ollama, na minha máquina, sem chave de API nem custo. O relatório entra no prompt como dado delimitado, a resposta sai em JSON Schema, e a validação confere o risco, os IOCs citados, o score e as afirmações de ausência. Se reprovar, o modelo tem uma segunda tentativa, com o motivo.</dd></div>
+            <div><dt>como verifiquei</dt><dd>19 testes com o modelo simulado e 4 rodadas de avaliação em 8 relatórios reais. Na primeira rodada tudo passou, mas ao ler as respostas achei afirmações falsas, como dizer que o <code>calc.exe</code> não tem URLs, IPs nem domínios. Isso virou duas checagens novas, a taxa caiu para 3/8 e voltou para 8/8 depois de ajustes no prompt.</dd></div>
+            <div><dt>limites</dt><dd>São 8 amostras e eu ajustei o prompt olhando para elas, então o 8/8 não vale para relatórios novos. Não há relatórios High ou Critical. O resumo pode exagerar na interpretação e não substitui análise humana.</dd></div>
+          </dl>
+          <p class="links"><a href="https://github.com/shwdaniel7/cerberus-explain">Repositório no GitHub</a></p>
+        </template>
+      </article>
+      <article class="pcard" data-name="Orquestração de agentes · port de PSP">
+        <div class="shot"><div class="screen"><img src="assets/projects/orquestracao.svg" width="1280" height="800" alt="Diagrama: um orquestrador delega para cinco subagentes com pastas próprias, e o QA revisa cada rodada antes da integração." loading="lazy"></div></div>
+        <div class="info">
+          <h3>Orquestração de agentes</h3>
+          <p class="pitch">Port nativo de um jogo de PSP para Windows (recompilação estática MIPS → C), construído com um orquestrador e cinco subagentes de IA.</p>
+          <p class="metric"><b>5</b><span>subagentes especialistas, cada um com a própria pasta</span></p>
+          <ul class="chips"><li>Claude Code</li><li>subagentes</li><li>Python</li><li>C</li></ul>
+          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de Orquestração de agentes</span></button>
+        </div>
+        <template>
+          <div class="shots">
+            <figure><img src="assets/projects/orquestracao.svg" width="1280" height="800" alt="Diagrama da orquestração." loading="lazy"><figcaption>diagrama feito por mim a partir da configuração do projeto</figcaption></figure>
+          </div>
+          <dl>
+            <div><dt>problema</dt><dd>Rodar um jogo de PSP nativamente no Windows, sem emulador, exige engenharia reversa, um recompilador, um runtime do sistema, gráficos, áudio e vídeo. É trabalho demais para uma pessoa conduzir em sequência.</dd></div>
+            <div><dt>o que fiz</dt><dd>Montei a orquestração no Claude Code: a sessão principal (Opus) planeja, delega, revisa e integra, e cinco subagentes cuidam de engenharia reversa, recompilador, sistemas do PSP, gráficos/áudio e QA/segurança. Cada um escreve só na própria pasta, interfaces compartilhadas mudam só pelo orquestrador, e agentes rodam em paralelo só quando pastas e dependências não se cruzam. Tarefas mecânicas vão para o Haiku, implementação para o Sonnet.</dd></div>
+            <div><dt>como verifiquei</dt><dd>O QA revisa o diff depois de cada rodada. Na fase de vídeo ele achou overflows de inteiro e leituras fora dos limites, que foram corrigidos antes de seguir. Resultado visual só conta com print ou log meu. Em 2 dias o port chegou a tela de título, menu, batalha 3D, música, save e vídeos decodificando, com ~2,95 M tokens nas fases 1 a 6, contra uma estimativa de 26 a 73 M.</dd></div>
+            <div><dt>limites</dt><dd>Projeto pessoal e repositório privado. O código foi escrito pelos agentes; meu papel foi desenhar a orquestração, decidir, revisar e testar. Ainda não é jogável do começo ao fim. O repositório não contém dados do jogo: ele roda a partir da cópia do próprio usuário.</dd></div>
+          </dl>
+          <p class="links">Repositório privado</p>
+        </template>
+      </article>
       <article class="pcard" data-name="KEEPER">
         <div class="shot"><div class="screen"><img src="assets/projects/keeper.webp" width="1280" height="800" alt="Painel do KEEPER com contagem de equipamentos disponíveis, emprestados e em manutenção, empréstimos atrasados e chamados abertos." loading="lazy"></div></div>
         <div class="info">
@@ -142,28 +187,6 @@ emprestado  <span class="p">→</span> manutenção   <span class="d">recusado: 
 
 <span class="d">GUI: IDENTITY → EVIDENCE → VERDICT · saída: JSON, CSV e HTML</span></pre>
           <p class="links"><a href="https://github.com/shwdaniel7/CERBERUS">Repositório no GitHub</a></p>
-        </template>
-      </article>
-      <article class="pcard" data-name="CERBERUS Explain">
-        <div class="shot"><div class="screen"><img src="assets/projects/explain.webp" width="1280" height="800" alt="Terminal com a saída do CERBERUS Explain para o cmd.exe do Windows: risco Moderate, resumo, fatos, hipóteses e próximos passos." loading="lazy"></div></div>
-        <div class="info">
-          <h3>CERBERUS Explain</h3>
-          <p class="pitch">Resume a triagem de um relatório do CERBERUS com um LLM local, valida a resposta contra o relatório e mede quando o modelo erra.</p>
-          <p class="metric"><b>7</b><span>checagens que a resposta precisa passar antes de aparecer</span></p>
-          <ul class="chips"><li>Python</li><li>Ollama</li><li>JSON Schema</li><li>sem API key</li></ul>
-          <button class="open" type="button" aria-haspopup="dialog">Ver detalhes<span class="sr"> de CERBERUS Explain</span></button>
-        </div>
-        <template>
-          <div class="shots">
-            <figure><img src="assets/projects/explain.webp" width="1280" height="800" alt="Saída do CERBERUS Explain para o cmd.exe." loading="lazy"><figcaption>saída real para o cmd.exe do Windows, com o modelo qwen2.5:7b-instruct. O modelo chama de suspeitos domínios que são nomes de DLLs: um exagero que a validação não pega.</figcaption></figure>
-          </div>
-          <dl>
-            <div><dt>problema</dt><dd>Modelo pequeno erra e inventa. Além disso, um relatório de malware pode conter texto escrito para enganar o modelo.</dd></div>
-            <div><dt>o que fiz</dt><dd>Uma CLI que manda um resumo do relatório do CERBERUS para um modelo rodando no Ollama, na minha máquina, sem chave de API nem custo. O relatório entra no prompt como dado delimitado, a resposta sai em JSON Schema, e a validação confere o risco, os IOCs citados, o score e as afirmações de ausência. Se reprovar, o modelo tem uma segunda tentativa, com o motivo.</dd></div>
-            <div><dt>como verifiquei</dt><dd>19 testes com o modelo simulado e 4 rodadas de avaliação em 8 relatórios reais. Na primeira rodada tudo passou, mas ao ler as respostas achei afirmações falsas, como dizer que o <code>calc.exe</code> não tem URLs, IPs nem domínios. Isso virou duas checagens novas, a taxa caiu para 3/8 e voltou para 8/8 depois de ajustes no prompt.</dd></div>
-            <div><dt>limites</dt><dd>São 8 amostras e eu ajustei o prompt olhando para elas, então o 8/8 não vale para relatórios novos. Não há relatórios High ou Critical. O resumo pode exagerar na interpretação e não substitui análise humana.</dd></div>
-          </dl>
-          <p class="links"><a href="https://github.com/shwdaniel7/cerberus-explain">Repositório no GitHub</a></p>
         </template>
       </article>
       <article class="pcard" data-name="FLCL File Organizer">
@@ -311,6 +334,16 @@ backup.tar.gz  <span class="p">→</span> Archives/                    <span cla
         <p class="verdict"><b>8/8 → 3/8 → 8/8</b><span>aprovadas de primeira, nas 8 amostras em que ajustei o prompt</span></p>
       </div>
 
+      <div class="panel" data-case="orq" data-title="Orquestração" data-sub="5 agentes, 1 integrador" role="tabpanel">
+        <ol class="steps">
+          <li data-who="eu"><b>eu</b><p>Dividi o port em papéis com pastas próprias e regras: interfaces só pelo orquestrador, paralelo só sem conflito, relatório de até 20 linhas.</p></li>
+          <li data-who="ia"><b>IA</b><p>O orquestrador delegou cada fase ao especialista certo e rodou sistemas e gráficos/áudio em paralelo.</p></li>
+          <li data-who="teste"><b>teste</b><p>O QA revisou cada rodada e achou overflows de inteiro e leituras fora dos limites no vídeo.</p></li>
+          <li data-who="eu"><b>eu</b><p>Confirmei cada resultado visual com print ou log antes de dar a fase por concluída.</p></li>
+        </ol>
+        <p class="verdict"><b>~2,95 M tokens</b><span>nas fases 1 a 6, contra estimativa de 26 a 73 M</span></p>
+      </div>
+
       <p class="note">Resumo do processo documentado em cada projeto, sem log de prompts.</p>
     </div>
 
@@ -320,7 +353,7 @@ backup.tar.gz  <span class="p">→</span> Archives/                    <span cla
         <ul>
           <li>Prompt engineering prático: contexto, decomposição, refinamento e validação.</li>
           <li>Integrei um LLM local no CERBERUS Explain e avalio as respostas com checagens automáticas.</li>
-          <li>Agentes e orquestração são a próxima área de estudo.</li>
+          <li>Orquestrei cinco subagentes num projeto pessoal, com contratos por pasta e QA a cada rodada.</li>
         </ul>
       </div>
       <div>
@@ -342,8 +375,8 @@ backup.tar.gz  <span class="p">→</span> Archives/                    <span cla
       <p class="sec-lead" data-reveal>O que aparece nos projetos acima.</p>
     </div>
     <div class="srows">
-      <div class="srow" data-reveal data-d="0"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Node.js</li><li>HTML</li><li>CSS</li><li>Java (básico)</li></ul></div>
-      <div class="srow" data-reveal data-d="1"><h3>dados e APIs</h3><ul><li>SQLite</li><li>APIs HTTP</li><li>JSON</li></ul></div>
+      <div class="srow" data-reveal data-d="0"><h3>linguagens</h3><ul><li>Python</li><li>JavaScript</li><li>Node.js</li><li>Java</li></ul></div>
+      <div class="srow" data-reveal data-d="1"><h3>dados e APIs</h3><ul><li>SQLite</li><li>MySQL</li><li>PostgreSQL</li><li>APIs HTTP</li></ul></div>
       <div class="srow" data-reveal data-d="2"><h3>engenharia</h3><ul><li>testes automatizados</li><li>CI (GitHub Actions)</li><li>Git</li></ul></div>
       <div class="srow" data-reveal data-d="3"><h3>sistemas</h3><ul><li>Linux</li><li>Bash</li><li>Windows</li></ul></div>
       <div class="srow" data-reveal data-d="4"><h3>IA</h3><ul><li>Ollama</li><li>LLM local</li><li>JSON Schema</li><li>validação de respostas</li></ul></div>
@@ -359,10 +392,11 @@ backup.tar.gz  <span class="p">→</span> Archives/                    <span cla
         <h2 class="sec-title" data-split data-node>contato</h2>
         <p class="sec-lead" data-reveal>Estou em São Paulo e aberto a conversas sobre estágio e projetos.</p>
       </div>
-      <a class="big-mail" href="mailto:swayerbr@gmail.com" data-reveal>swayerbr@gmail.com</a>
+      <a class="big-mail" href="mailto:oficialdansilva@gmail.com" data-reveal>oficialdansilva@gmail.com</a>
       <ul class="contact-list" data-reveal>
         <li><span>linkedin</span><a href="https://www.linkedin.com/in/daniel-silva-santos-b85012305/">daniel-silva-santos</a></li>
         <li><span>github</span><a href="https://github.com/shwdaniel7">shwdaniel7</a></li>
+        <li><span>currículo</span><a href="assets/Daniel-da-Silva-Santos-Curriculo.pdf" download>baixar PDF</a></li>
       </ul>
     </div>
     <figure class="gif-slot" aria-hidden="true" data-reveal data-d="2">
